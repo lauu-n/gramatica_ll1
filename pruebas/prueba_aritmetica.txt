@@ -1,0 +1,32 @@
+// 1. Asociatividad de resta por la izquierda (debe dar 25)
+a = 100 - 50 - 20 - 5;
+a;
+
+// 2. Asociatividad de division por la izquierda (debe dar 2.5)
+b = 120 / 6 / 4 / 2;
+b;
+
+// 3. Asociatividad de modulo por la izquierda (debe dar 0)
+c = 20 % 7 % 3;
+c;
+
+// 4. Precedencia mixta: primero %, luego *, luego +, luego - (debe dar 11)
+d = 10 + 20 % 6 * 2 - 3;
+d;
+
+// 5. Uso de parentesis para alterar la precedencia
+e = (2 + 3) * 4;
+e;
+
+f = (((10 + 2) * 3) - 6) / 5;
+f;
+
+// 6. Operadores unarios positivos y negativos (+, -, encadenados)
+unario1 = -5;
+unario2 = +5;
+unario3 = --5;
+unario4 = ---5;
+unario1;
+unario2;
+unario3;
+unario4;

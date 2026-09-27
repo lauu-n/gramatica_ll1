@@ -1,0 +1,8 @@
+// Pruebas de control de errores semanticos
+// Por defecto se prueba division por cero:
+x = 10 / 0;
+
+// Otras lineas de prueba (descomentar una para probar):
+// x = 10 % 0;                     // Error: Modulo entre cero
+// x = tan(3.141592653589793 / 2); // Error: Tangente indefinida en pi/2
+// x = variable_inexistente + 1;   // Error: Variable no definida

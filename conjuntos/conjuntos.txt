@@ -1,0 +1,8 @@
+primeros:
+{'Program': {'NUM', 'ID', 'FUNC', 'ε', '('}, 'StatList': {'NUM', 'ID', 'FUNC', 'ε', '('}, 'Stat': {'ID', 'FUNC', 'NUM', '('}, 'Expr': {'NUM', 'ID', 'FUNC', '('}, 'ExprPrima': {'-', '+', 'ε'}, 'Term': {'NUM', 'ID', 'FUNC', '('}, 'TermPrima': {'ε', '*', '/', '%'}, 'Factor': {'ID', 'FUNC', 'NUM', '('}}
+
+siguientes:
+{'Program': {'$'}, 'StatList': {'$'}, 'Stat': {'$', 'NUM', 'ID', 'FUNC', '('}, 'Expr': {')', ';'}, 'ExprPrima': {')', ';'}, 'Term': {'-', ';', '+', ')'}, 'TermPrima': {'-', ';', '+', ')'}, 'Factor': {';', '+', ')', '-', '*', '/', '%'}}
+
+prediccion:
+{1: {'ID', 'FUNC', 'NUM', '$', '('}, 2: {'ID', 'FUNC', 'NUM', '('}, 3: {'$'}, 4: {'ID'}, 5: {'ID', 'FUNC', 'NUM', '('}, 6: {'ID', 'FUNC', 'NUM', '('}, 7: {'+'}, 8: {'-'}, 9: {')', ';'}, 10: {'ID', 'FUNC', 'NUM', '('}, 11: {'*'}, 12: {'/'}, 13: {'%'}, 14: {'-', ';', '+', ')'}, 15: {'FUNC'}, 16: {'ID'}, 17: {'NUM'}, 18: {'('}}
