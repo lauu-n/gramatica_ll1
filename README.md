@@ -101,7 +101,7 @@ python3 main.py <ruta_del_archivo.txt>
 **Ejemplo:**
 
 ```bash
-python3 main.py pruebas/ejemplo.txt
+python3 main.py pruebas/prueba.txt
 ```
 
 Se mostrará:
@@ -110,7 +110,75 @@ Se mostrará:
 3. Resultados
 4. Archivos generados en `conjuntos/`
 
+<img width="1130" height="720" alt="image" src="https://github.com/user-attachments/assets/73e0df0c-7305-4192-a512-a8f45fbbb06b" />
 
+```
+(venv) laun@Nino-Rosas:~/LENGUAJES_P_T/gramatica_ll1$ python3 main.py pruebas/prueba.txt
+// 1. Asignacion de variables
+x = 10.5;
+y = 2.5;
+
+// 2. Operaciones aritmeticas (+, -, *, /, %)
+suma = x + y;
+resta = x - y;
+mult = x * y;
+div = x / y;
+mod = 17 % 5;
+
+// 3. Sentencias de expresion (imprimir variables)
+suma;
+resta;
+mult;
+div;
+mod;
+
+// 4. Operador de valor absoluto (abs) y signo unario negativo (-)
+val_negativo = -42.8;
+val_absoluto = abs(val_negativo);
+val_absoluto;
+
+// 5. Funciones trigonometricas: sin, cos, tan
+pi = 3.141592653589793;
+angulo = pi / 2;
+resultado_seno = sin(angulo);
+resultado_cos = cos(0);
+resultado_tan = tan(0);
+
+resultado_seno;
+resultado_cos;
+resultado_tan;
+
+// 6. Expresion combinada (precedencia, parentesis, modulo y abs)
+z = abs(-5) * 4 + sin(pi / 6) - (10 % 4) / 2;
+z;
+
+
+x = 10.5
+y = 2.5
+suma = 13.0
+resta = 8.0
+mult = 26.25
+div = 4.2
+mod = 2
+Resultado: 13.0
+Resultado: 8.0
+Resultado: 26.25
+Resultado: 4.2
+Resultado: 2
+val_negativo = -42.8
+val_absoluto = 42.8
+Resultado: 42.8
+pi = 3.141592653589793
+angulo = 1.5707963267948966
+resultado_seno = 1.0
+resultado_cos = 1.0
+resultado_tan = 0.0
+Resultado: 1.0
+Resultado: 1.0
+Resultado: 0.0
+z = 19.5
+Resultado: 19.5
+```
 
 ---
 
