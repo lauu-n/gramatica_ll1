@@ -1,25 +1,27 @@
 # Gramática LL(1) - Analizador Sintáctico
 
-## 🎯 ¿Qué es?
+---
 
-**Gramática LL(1)** es un analizador sintáctico y semántico implementado en Python que utiliza la metodología **LL(1)** (Left-to-right, Leftmost derivation, 1 lookahead token) para procesar un lenguaje de expresiones matemáticas.
+## ¿Qué es?
 
-El proyecto implementa un compilador completo con tres etapas de análisis:
+Analizador sintáctico y semántico en Python que utiliza la metodología **LL(1)** (Left-to-right, Leftmost derivation, 1 lookahead token) para procesar un lenguaje de expresiones.
+
+Se implementa un compilador completo con tres etapas de análisis:
 - **Análisis Léxico**: Tokenización del código fuente
 - **Análisis Sintáctico**: Validación de la estructura gramatical
 - **Análisis Semántico**: Evaluación y ejecución de expresiones
 
 ---
 
-## 🚀 ¿Qué hace?
+## ¿Qué hace?
 
-El analizador permite:
+El analizador:
 
-1. **Procesar código fuente** con asignaciones de variables y expresiones matemáticas
-2. **Calcular operaciones** con suma, resta, multiplicación, división y módulo
-3. **Evaluar funciones trigonométricas** (sin, cos, tan) y matemáticas (abs)
-4. **Validar errores** en las tres fases del análisis
-5. **Generar conjuntos analíticos**: FIRST, FOLLOW y PREDICT/SELECT
+1. **Procesa código** con asignaciones de variables y expresiones matemáticas
+2. **Calcula operaciones** con suma, resta, multiplicación, división y módulo
+3. **Evalúa funciones** como *sin, cos, tan, abs*
+4. **Valida errores** en las tres fases
+5. **Genera conjuntos **: PRIMERO, SIGUIENTE y PREDICT
 
 ### Ejemplo de código soportado:
 
@@ -32,7 +34,7 @@ sin(3.14159);
 
 ---
 
-## 📁 Estructura del Directorio
+## Directorio
 
 ```
 gramatica_ll1/
@@ -62,7 +64,7 @@ gramatica_ll1/
 
 ---
 
-## 🔧 Cómo Ejecutarlo
+## Ejecución
 
 ### Requisitos
 
@@ -77,7 +79,7 @@ git clone https://github.com/lauu-n/gramatica_ll1.git
 cd gramatica_ll1
 ```
 
-2. **Crear un entorno virtual (opcional pero recomendado):**
+2. **Crear un entorno virtual:**
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate  # En Windows: .venv\Scripts\activate
@@ -102,35 +104,44 @@ python3 main.py <ruta_del_archivo.txt>
 python3 main.py pruebas/ejemplo.txt
 ```
 
-El programa mostrará:
-1. El contenido del archivo
-2. Errores léxicos, sintácticos o semánticos (si los hay)
-3. Resultados de las evaluaciones
+Se mostrará:
+1. Contenido del archivo
+2. Errores léxicos, sintácticos o semánticos
+3. Resultados
 4. Archivos generados en `conjuntos/`
+
+
 
 ---
 
-## 📄 Explicación de Cada Archivo
+## Cada archivo
 
 ### **main.py**
 Punto de entrada del programa. Realiza:
 - Carga del archivo de entrada
-- Coordinación de las tres etapas de análisis
-- Recolección y presentación de errores
+- Coordina las tres etapas de análisis
+- Recolección de errores
 - Llamada a la función `guardar_conjuntos()` para generar archivos analíticos
 
 **Flujo:**
 ```
-1. Lee el archivo → 2. Análisis Léxico → 3. Análisis Sintáctico → 
-4. Análisis Semántico → 5. Genera conjuntos
+1. Lee el archivo
+→
+2. Análisis Léxico
+→
+3. Análisis Sintáctico
+→ 
+4. Análisis Semántico
+→
+5. Genera conjuntos
 ```
 
 ### **analizador_ll1.py**
-Módulo de análisis LL(1) que calcula:
+Módulo LL(1) que calcula:
 
-- **FIRST (Primeros)**: Conjunto de terminales que pueden aparecer al inicio de cada no-terminal
-- **FOLLOW (Siguientes)**: Conjunto de terminales que pueden seguir a cada no-terminal
-- **PREDICT/SELECT (Predicción)**: Utilizado para la tabla de análisis sintáctico
+- **PRIMEROS**: Conjunto de terminales que pueden aparecer al inicio de cada no-terminal
+- **SIGUIENTES**: Conjunto de terminales que pueden seguir a cada no-terminal
+- **PREDICT**: Utilizado para la tabla de análisis sintáctico
 
 Define la gramática LL(1) con:
 - 8 no-terminales: `Program, StatList, Stat, Expr, ExprPrima, Term, TermPrima, Factor`
@@ -161,9 +172,9 @@ Evaluador semántico del árbol de análisis (AST). Implementa el patrón **Visi
 
 ---
 
-## 📊 Gramática LL(1)
+## Gramática LL(1)
 
-La gramática define un lenguaje de expresiones matemáticas:
+Define un lenguaje de expresiones matemáticas:
 
 ```
 Program     → StatList
@@ -178,9 +189,9 @@ Factor      → FUNC '(' Expr ')' | ID | NUM | '(' Expr ')'
 
 ---
 
-## ⚙️ Errores Detectados
+## Errores
 
-El analizador detecta y reporta tres tipos de errores:
+Detecta y reporta tres tipos de errores:
 
 ### 1. **Errores Léxicos**
 Tokens no reconocidos:
@@ -207,7 +218,7 @@ Error Semántico [Línea X]: La variable 'x' no está definida.
 
 ---
 
-## 📝 Ejemplo de Uso Completo
+## Ejemplo de uso completo
 
 **Archivo de entrada** (`pruebas/ejemplo.txt`):
 ```
@@ -244,41 +255,16 @@ Resultado: 2.0
 
 ---
 
-## 🔍 Tecnologías Utilizadas
-
-- **Python 3.x**: Lenguaje de programación principal
-- **ANTLR4**: Framework para generación de analizadores léxicos y sintácticos
-- **Patrón Visitor**: Para traversal y evaluación del AST
-
----
-
-## 📚 Conceptos LL(1)
+## Conceptos LL(1)
 
 **LL(1)** significa:
 - **L**: Left-to-right (lectura de izquierda a derecha)
 - **L**: Leftmost derivation (derivación por la izquierda)
 - **1**: 1 token de lookahead (se examina solo el siguiente token)
 
-Esta metodología garantiza parsing determinístico sin backtracking.
-
 ---
 
-## 📄 Licencia
-
-Sin licencia especificada (repositorio público)
-
----
-
-## 👤 Autor
-
-**lauu-n**
-
----
-
-## 📞 Soporte
-
-Para reportar errores o sugerencias, abre un issue en el repositorio.
-
----
-
-**Última actualización**: Septiembre 2026
+## Integrantes
+- David Avendaño
+- Brayan Paredes
+- Laura Niño
